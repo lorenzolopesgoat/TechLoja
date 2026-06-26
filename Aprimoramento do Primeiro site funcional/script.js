@@ -7,25 +7,28 @@ async function carregarProdutos() {
         produtos = await res.json();
     } catch (e) {
         produtos = [
-            {
-                id: 1,
-                nome: "Notebook Eco Pro",
-                preco: 2899.90,
-                categoria: "Notebooks"
-            },
-            {
-                id: 2,
-                nome: "Mouse Sem Fio",
-                preco: 89.90,
-                categoria: "Acessórios"
-            },
-            {
-                id: 3,
-                nome: "Teclado RGB",
-                preco: 249.90,
-                categoria: "Acessórios"
-            }
-        ];
+    {
+        id: 1,
+        nome: "Notebook Eco Pro",
+        preco: 2899.90,
+        categoria: "Notebooks",
+        imagem: "https://www.bloomberglinea.com/resizer/v2/RCEFLO6VDFGT7H5FRDWSQRYRPQ.jpeg?auth=439e20532072ea985e78b4d627ef21edbd2cf96346f2cbfc2f844536339b618c&width=800&height=533&quality=80&smart=true"
+    },
+    {
+        id: 2,
+        nome: "Mouse Sem Fio",
+        preco: 89.90,
+        categoria: "Acessórios",
+        imagem: "https://http2.mlstatic.com/D_NQ_NP_765431-MLA84159386681_042025-B.webp"
+    },
+    {
+        id: 3,
+        nome: "Teclado RGB",
+        preco: 249.90,
+        categoria: "Acessórios",
+        imagem: "https://http2.mlstatic.com/D_NQ_NP_732397-MLA84504349693_052025-B.webp"
+    }
+];
     }
 
     renderizarProdutos(produtos);
@@ -42,9 +45,10 @@ function renderizarProdutos(lista) {
             'card bg-white border rounded-3xl overflow-hidden';
 
         div.innerHTML = `
-            <div class="h-48 bg-slate-100 flex items-center justify-center text-7xl">
-                💻
-            </div>
+            <img
+                src="${p.imagem}"
+                alt="${p.nome}"
+                class="w-full h-48 object-cover">
 
             <div class="p-5">
                 <h3 class="font-semibold text-lg">${p.nome}</h3>
@@ -57,7 +61,7 @@ function renderizarProdutos(lista) {
                     Adicionar
                 </button>
             </div>
-        `;
+                `;
 
         grid.appendChild(div);
     });

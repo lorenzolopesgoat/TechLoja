@@ -1,12 +1,45 @@
 :root {
-    --primary: #2563eb;
+    --primary: #00bfff;
+    --secondary: #7c3aed;
+    --dark: #0f172a;
+    --light: #e2e8f0;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
 }
 
 .card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.4);
+}
+
+.bg-white {
+    background-color: #111827 !important;
+}
+
+header {
+    border-bottom: 2px solid var(--primary);
+}
+
+input {
+    background-color: #1e293b;
+    color: white;
+    border: 1px solid #334155;
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+#contador {
+    background: linear-gradient(45deg, #00bfff, #7c3aed);
 }
